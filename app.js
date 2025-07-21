@@ -2,8 +2,10 @@ import express from "express";
 import rateLimit from "express-rate-limit";
 import userRoute from "./user/user.route.js";
 import AppConfig from "./commun/config/app.config.js";
+import helmet from "helmet";
 const serveur = express();
 serveur.use(express.json());
+serveur.use(helmet());
 
 // // Un delimiteur de nombre de requetes par IP
 // const Ipautoriser = ["192.168.1.116"];
